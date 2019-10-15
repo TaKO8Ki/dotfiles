@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ln -sf ~/dotfiles/karabiner.json ~/.config/karabiner/karabiner.json
+
 set -u
 
 # 実行場所のディレクトリを取得
