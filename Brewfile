@@ -7,6 +7,7 @@ tap "homebrew/core"
 
 # brew
 brew "readline"
+brew "nodenv"
 brew "goenv"
 brew "imagemagick", link: false
 brew "imagemagick@6", link: true
