@@ -6,6 +6,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 
 # brew
+brew "zsh"
 brew "readline"
 brew "nodenv"
 brew "goenv"
