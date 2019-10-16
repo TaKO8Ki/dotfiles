@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ln -sf ~/dotfiles/karabiner.json ~/.config/karabiner/karabiner.json
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew bundle
 
 set -u
@@ -21,6 +21,8 @@ for f in .??*; do
 
     ln -snfv ~/dotfiles/"$f" ~/
 done
+
+ln -sf ~/dotfiles/karabiner.json ~/.config/karabiner/karabiner.json
 
 [ -e ~/.gitconfig.local ] || cp ~/dotfiles/.gitconfig.local.template ~/.gitconfig.local
 
