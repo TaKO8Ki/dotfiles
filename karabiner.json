@@ -35,7 +35,8 @@
                                     "key_code": "h",
                                     "modifiers": {
                                         "mandatory": [
-                                            "shift"
+                                            "shift",
+                                            "control"
                                         ],
                                         "optional": [
                                             "caps_lock"
@@ -57,6 +58,7 @@
                                     "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
+                                            "control",
                                             "shift"
                                         ],
                                         "optional": [
