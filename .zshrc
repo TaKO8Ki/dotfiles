@@ -26,6 +26,21 @@ eval "$(pyenv init -)"
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 
+# alias
+export LSCOLORS=gxfxcxdxbxegedabagacad
+alias ls='ls -G'
+alias rm='rm -i'
+alias ..='cd ..'
+alias mv='mv -i'
+alias cp='cp -i'
+alias la='ls -a'
+alias rc='rails c'
+
+## git
+alias h='hub browse'
+
+# function
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME

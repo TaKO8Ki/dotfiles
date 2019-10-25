@@ -23,6 +23,7 @@ brew "redis@3.2"
 brew "watch"
 brew "zsh"
 brew "argoproj/tap/argo"
+brew "hub"
 
 # cask
 cask "r"
