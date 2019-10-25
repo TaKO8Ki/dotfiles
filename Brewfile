@@ -36,3 +36,5 @@ cask 'notion'
 cask 'karabiner-elements'
 cask 'github-desktop'
 cask 'slack'
+cask 'alfred'
+
