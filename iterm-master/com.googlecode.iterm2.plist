@@ -4,6 +4,8 @@
 <dict>
 	<key>AdjustWindowForFontSizeChange</key>
 	<true/>
+	<key>AlternateMouseScroll</key>
+	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>AppleScrollAnimationEnabled</key>
@@ -1002,7 +1004,7 @@ Make Text Bigger</string>
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Setting/iterm-master</string>
+	<string>~/dotfiles/iterm-master</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{799, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -1049,7 +1051,7 @@ Make Text Bigger</string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1010 877 0 0 1440 900 </string>
+	<string>0 0 1440 900 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1931,14 +1933,14 @@ Make Text Bigger</string>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1440, 900}}</string>
+		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
 		<string>{304, 629}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>7B658424-D138-4F30-A226-9FCDB45E5D7D</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>16</integer>
+	<integer>19</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2657,14 +2659,15 @@ Make Text Bigger</string>
 	</dict>
 	<key>NoSyncSearchHistory2</key>
 	<array>
+		<string>address</string>
+		<string>address=</string>
+		<string>adress</string>
 		<string>docker exec -it 383176b937b7docker exec -it 383176b937b7</string>
 		<string>rails</string>
 		<string>$(curl</string>
 		<string>curl</string>
 		<string>base</string>
 		<string>google</string>
-		<string>password au</string>
-		<string>passwowrd au</string>
 	</array>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>591384688.23727906</real>
@@ -2710,7 +2713,7 @@ Make Text Bigger</string>
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/tako8ki/Setting/iterm-master</string>
+	<string>/Users/tako8ki/dotfiles/iterm-master</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
@@ -2722,7 +2725,7 @@ Make Text Bigger</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-10-14T08:50:11Z</date>
+	<date>2019-10-25T08:47:32Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
