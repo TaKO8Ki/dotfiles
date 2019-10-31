@@ -34,7 +34,7 @@ cask 'sequel-pro'
 cask 'visual-studio-code'
 cask 'notion'
 cask 'karabiner-elements'
-cask 'github-desktop'
+cask 'github'
 cask 'slack'
 cask 'alfred'
 
