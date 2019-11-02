@@ -28,7 +28,8 @@ set incsearch
 set wrapscan
 set hlsearch
 
-
+:set term=xterm-256color
+:syntax on
 
 
 

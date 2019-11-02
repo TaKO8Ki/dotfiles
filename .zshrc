@@ -1,19 +1,23 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:/usr/local/bin"
+source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+plugins=(zsh-syntax-highlighting)
 
 # rbenv
 export PATH="$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/tako8ki/.oh-my-zsh"
-export PATH="/Users/tako8ki/go/bin:$PATH"
+export ZSH="$HOME/.oh-my-zsh"
+export PATH="$HOME/go/bin:$PATH"
 
 # goenv
 export PATH="$HOME/.goenv/bin:$PATH"
 export GOPATH=$HOME/Programming/Go/go
 export PATH="$HOME/.goenv/shims:$PATH"
+export PATH="$PATH:$GOPATH/bin"
+export GOBIN="$GOPATH/bin"
 eval "$(goenv init -)"
 
 # pyenv
