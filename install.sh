@@ -29,6 +29,11 @@ ln -sf ~/dotfiles/karabiner.json ~/.config/karabiner/karabiner.json
 
 [ -e ~/.gitconfig.local ] || cp ~/dotfiles/.gitconfig.local.template ~/.gitconfig.local
 
+# shellをzshにする
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+chsh -s /bin/zsh
+
+
 cat << END
 
 **************************************************
