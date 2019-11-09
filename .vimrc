@@ -30,11 +30,13 @@ set hlsearch
 
 :set term=xterm-256color
 :syntax on
+colorscheme antares
 
-
-
-
-
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+highlight LineNr ctermbg=none
+highlight Folded ctermbg=none
+highlight EndOfBuffer ctermbg=none 
 
 
 
