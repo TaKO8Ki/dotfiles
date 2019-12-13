@@ -40,8 +40,12 @@ alias cp='cp -i'
 alias la='ls -a'
 alias rc='rails c'
 
+## docker
+alias dcb='docker-compose build'
+
 ## git
 alias h='hub browse'
+alias gd='git diff'
 
 # function
 
