@@ -5,10 +5,8 @@ set autoread
 set hidden
 set showcmd
 
-
 set number
 set cursorline
-set cursorcolumn
 set virtualedit=onemore
 set smartindent
 set visualbell
@@ -20,7 +18,6 @@ set list listchars=tab:\▸\-
 set expandtab
 set tabstop=2
 set shiftwidth=2
-
 
 set ignorecase
 set smartcase
@@ -38,21 +35,6 @@ highlight LineNr ctermbg=none
 highlight Folded ctermbg=none
 highlight EndOfBuffer ctermbg=none 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+execute pathogen#infect()
+let NERDTreeShowHidden = 1
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
