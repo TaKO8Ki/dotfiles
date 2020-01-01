@@ -27,6 +27,7 @@ brew "argoproj/tap/argo"
 brew "hub"
 brew "sshpass"
 brew "tree"
+brew "mecab"
 brew "golangci-lint"
 
 # cask
