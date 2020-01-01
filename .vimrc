@@ -15,8 +15,6 @@ if dein#load_state('/Users/tako8ki/.vim/bundle/.cache/dein')
   call dein#add('/Users/tako8ki/.vim/bundle/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   call dein#add('fatih/vim-go')
-  let g:go_fmt_command = "goimports"
-
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add("cohama/lexima.vim")
   call dein#add('tpope/vim-surround')
@@ -39,6 +37,7 @@ let g:airline_theme='minimalist'
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 " ## vim-go
+let g:go_fmt_command = "goimports"
 let g:go_hightlight_functions = 1
 let g:go_hightlight_methods = 1
 let g:go_hightlight_structs = 1
