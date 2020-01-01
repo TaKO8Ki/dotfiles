@@ -7,6 +7,7 @@ tap "homebrew/core"
 
 # brew
 brew "zsh"
+brew "zsh-syntax-highlighting"
 brew "readline"
 brew "nodenv"
 brew "goenv"
@@ -24,6 +25,9 @@ brew "watch"
 brew "zsh"
 brew "argoproj/tap/argo"
 brew "hub"
+brew "sshpass"
+brew "tree"
+brew "golangci-lint"
 
 # cask
 cask "r"
