@@ -30,6 +30,9 @@ eval "$(pyenv init -)"
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 
+# vim
+export PATH="/usr/local/bin:$PATH"
+
 # alias
 export LSCOLORS=gxfxcxdxbxegedabagacad
 alias ls='ls -G'
