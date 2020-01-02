@@ -69,22 +69,28 @@ let g:neocomplete#enable_auto_delimiter = 1
 " 1文字目の入力から補完のポップアップを表示
 let g:neocomplete#auto_completion_start_length = 1
 " バックスペースで補完のポップアップを閉じる
-
 inoremap <expr><BS> neocomplete#smart_close_popup()."<C-h>"
-
 " エンターキーで補完候補の確定. スニペットの展開もエンターキーで確定
 imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
 " タブキーで補完候補の選択. スニペット内のジャンプもタブキーでジャンプ
 imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
 
+
 " # KeyBind
-inoremap { {}<Left>
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap ( ()<ESC>i
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
+vnoremap { "zdi^V{<C-R>z}<ESC>
+vnoremap [ "zdi^V[<C-R>z]<ESC>
+vnoremap ( "zdi^V(<C-R>z)<ESC>
+vnoremap " "zdi^V"<C-R>z^V"<ESC>
+vnoremap ' "zdi'<C-R>z'<ESC>
 
 " ## Go
 let g:go_bin_path = $GOBIN
+
 
 " # Setting
 set fenc=utf-8
