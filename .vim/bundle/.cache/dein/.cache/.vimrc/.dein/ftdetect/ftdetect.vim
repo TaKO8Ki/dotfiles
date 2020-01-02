@@ -1,3 +1,5 @@
+" Detect syntax file.
+autocmd BufNewFile,BufRead *.snip,*.snippets set filetype=neosnippet
 " vint: -ProhibitAutocmdWithNoGroup
 
 " don't spam the user when Vim is started in Vi compatibility mode

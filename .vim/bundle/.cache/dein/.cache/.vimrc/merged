@@ -1,3 +1,3 @@
 {'repo': v:val.repo, 'rev': get(v:val, 'rev', '')}
 0
-[{'rev': '', 'repo': '/Users/tako8ki/.vim/bundle/.cache/dein/repos/github.com/Shougo/dein.vim'}, {'rev': '', 'repo': 'cohama/lexima.vim'}, {'rev': '', 'repo': 'ctrlpvim/ctrlp.vim'}, {'rev': '', 'repo': 'fatih/vim-go'}, {'rev': '', 'repo': 'scrooloose/nerdtree'}, {'rev': '', 'repo': 'tpope/vim-surround'}, {'rev': '', 'repo': 'vim-airline/vim-airline'}, {'rev': '', 'repo': 'vim-airline/vim-airline-themes'}]
+[{'rev': '', 'repo': '/Users/tako8ki/.vim/bundle/.cache/dein/repos/github.com/Shougo/dein.vim'}, {'rev': '', 'repo': 'Shougo/neocomplete.vim'}, {'rev': '', 'repo': 'Shougo/neosnippet'}, {'rev': '', 'repo': 'Shougo/neosnippet-snippets'}, {'rev': '', 'repo': 'ctrlpvim/ctrlp.vim'}, {'rev': '', 'repo': 'fatih/vim-go'}, {'rev': '', 'repo': 'scrooloose/nerdtree'}, {'rev': '', 'repo': 'tpope/vim-surround'}, {'rev': '', 'repo': 'vim-airline/vim-airline'}, {'rev': '', 'repo': 'vim-airline/vim-airline-themes'}]

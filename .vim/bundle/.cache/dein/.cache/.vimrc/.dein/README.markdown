@@ -1,145 +1,91 @@
-The NERDTree
-=============
+# surround.vim
 
-Introduction
-------------
+Surround.vim is all about "surroundings": parentheses, brackets, quotes,
+XML tags, and more.  The plugin provides mappings to easily delete,
+change and add such surroundings in pairs.
 
-The NERDTree is a file system explorer for the Vim editor. Using this plugin,
-users can visually browse complex directory hierarchies, quickly open files for
-reading or editing, and perform basic file system operations.
+It's easiest to explain with examples.  Press `cs"'` inside
 
-This plugin can also be extended with custom mappings using a special API. The
-details of this API and of other NERDTree features are described in the
-included documentation.
+    "Hello world!"
 
-![NERDTree Screenshot](https://github.com/scrooloose/nerdtree/raw/master/screenshot.png)
+to change it to
 
-Installation
-------------
+    'Hello world!'
 
-Below are just some of the methods for installing NERDTree. Do not follow all of these instructions; just pick your favorite one. Other plugin managers exist, and NERDTree should install just fine with any of them.
+Now press `cs'<q>` to change it to
 
-#### Vim 8+ packages
+    <q>Hello world!</q>
 
-If you are using VIM version 8 or higher you can use its built-in package management; see `:help packages` for more information. Just run these commands in your terminal:
+To go full circle, press `cst"` to get
 
-```bash
-git clone https://github.com/scrooloose/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
-vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
-```
+    "Hello world!"
 
-Otherwise, these are some of the several 3rd-party plugin managers you can choose from. Be sure you read the instructions for your chosen plugin, as there typically are additional steps you nee d to take.
+To remove the delimiters entirely, press `ds"`.
 
-#### [pathogen.vim](https://github.com/tpope/vim-pathogen)
+    Hello world!
 
-In the terminal,
-```bash
-git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
-```
-In your vimrc,
-```vim
-call pathogen#infect()
-syntax on
-filetype plugin indent on
-```
+Now with the cursor on "Hello", press `ysiw]` (`iw` is a text object).
 
-Then reload vim, run `:helptags ~/.vim/bundle/nerdtree/doc/` or `:Helptags`.
+    [Hello] world!
 
-#### [Vundle.vim](https://github.com/VundleVim/Vundle.vim)
-```vim
-call vundle#begin()
-Plugin 'scrooloose/nerdtree'
-call vundle#end()
-```
+Let's make that braces and add some space (use `}` instead of `{` for no
+space): `cs]{`
 
-#### [vim-plug](https://github.com/junegunn/vim-plug)
-```vim
-call plug#begin()
-Plug 'scrooloose/nerdtree'
-call plug#end()
-```
+    { Hello } world!
 
-#### [apt-vim](https://github.com/egalpin/apt-vim)
-```bash
-apt-vim install -y https://github.com/scrooloose/nerdtree.git
-```
+Now wrap the entire line in parentheses with `yssb` or `yss)`.
 
-F.A.Q. (here, and in the [Wiki](https://github.com/scrooloose/nerdtree/wiki))
-------
+    ({ Hello } world!)
 
-#### Is there any support for `git` flags?
+Revert to the original text: `ds{ds)`
 
-Yes, install [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin).
+    Hello world!
 
----
-#### Can I have the nerdtree on every tab automatically?
+Emphasize hello: `ysiw<em>`
 
-Nope. If this is something you want then chances are you aren't using tabs and
-buffers as they were intended to be used. Read this
-http://stackoverflow.com/questions/102384/using-vims-tabs-like-buffers
+    <em>Hello</em> world!
 
-If you are interested in this behaviour then consider [vim-nerdtree-tabs](https://github.com/jistr/vim-nerdtree-tabs)
+Finally, let's try out visual mode. Press a capital V (for linewise
+visual mode) followed by `S<p class="important">`.
 
----
-#### How can I open a NERDTree automatically when vim starts up?
+    <p class="important">
+      <em>Hello</em> world!
+    </p>
 
-Stick this in your vimrc: `autocmd vimenter * NERDTree`
+This plugin is very powerful for HTML and XML editing, a niche which
+currently seems underfilled in Vim land.  (As opposed to HTML/XML
+*inserting*, for which many plugins are available).  Adding, changing,
+and removing pairs of tags simultaneously is a breeze.
 
----
-#### How can I open a NERDTree automatically when vim starts up if no files were specified?
+The `.` command will work with `ds`, `cs`, and `yss` if you install
+[repeat.vim](https://github.com/tpope/vim-repeat).
 
-Stick this in your vimrc:
-```vim
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-```
+## Installation
 
-Note: Now start vim with plain `vim`, not `vim .`
+Install using your favorite package manager, or use Vim's built-in package
+support:
 
----
-#### What if I'm also opening a saved session, for example `vim -S session_file.vim`? I don't want NERDTree to open in that scenario.
-```vim
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == "" | NERDTree | endif
-```
+    mkdir -p ~/.vim/pack/tpope/start
+    cd ~/.vim/pack/tpope/start
+    git clone https://tpope.io/vim/surround.git
+    vim -u NONE -c "helptags surround/doc" -c q
 
----
-#### How can I open NERDTree automatically when vim starts up on opening a directory?
-```vim
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-```
+## Contributing
 
-This window is tab-specific, meaning it's used by all windows in the tab. This trick also prevents NERDTree from hiding when first selecting a file.
+See the contribution guidelines for
+[pathogen.vim](https://github.com/tpope/vim-pathogen#readme).
 
-Note: Executing `vim ~/some-directory` will open NERDTree and a new edit window. `exe 'cd '.argv()[0]` sets the `pwd` of the new edit window to `~/some-directory`
+## Self-Promotion
 
----
-#### How can I map a specific key or shortcut to open NERDTree?
+Like surround.vim?  Star the repository on
+[GitHub](https://github.com/tpope/vim-surround) and vote for it on
+[vim.org](https://www.vim.org/scripts/script.php?script_id=1697).
 
-Stick this in your vimrc to open NERDTree with `Ctrl+n` (you can set whatever key you want):
-```vim
-map <C-n> :NERDTreeToggle<CR>
-```
+Love surround.vim?  Follow [tpope](http://tpo.pe/) on
+[GitHub](https://github.com/tpope) and
+[Twitter](http://twitter.com/tpope).
 
----
-#### How can I close vim if the only window left open is a NERDTree?
+## License
 
-Stick this in your vimrc:
-```vim
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-```
-
----
-#### Can I have different highlighting for different file extensions?
-
-See here: https://github.com/scrooloose/nerdtree/issues/433#issuecomment-92590696
-
----
-#### How can I change default arrows?
-
-Use these variables in your vimrc. Note that below are default arrow symbols
-```vim
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
-```
+Copyright (c) Tim Pope.  Distributed under the same terms as Vim itself.
+See `:help license`.
