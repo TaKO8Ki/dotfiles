@@ -15,12 +15,22 @@ if dein#load_state('/Users/tako8ki/.vim/bundle/.cache/dein')
   call dein#add('/Users/tako8ki/.vim/bundle/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   call dein#add('fatih/vim-go')
-  call dein#add('ctrlpvim/ctrlp.vim')
-  " call dein#add("cohama/lexima.vim")
   call dein#add('tpope/vim-surround')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
   call dein#add('scrooloose/nerdtree')
+  call dein#add('terryma/vim-multiple-cursors')
+  call dein#add('Shougo/denite.nvim')
+  call dein#add('junegunn/fzf', {'build': './install --all'})
+  call dein#add('junegunn/fzf.vim')
+  call dein#add('mileszs/ack.vim')
+  
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+        call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
 
   if has('lua')
     call dein#add('Shougo/neocomplete.vim')
@@ -32,6 +42,12 @@ if dein#load_state('/Users/tako8ki/.vim/bundle/.cache/dein')
   call dein#end()
   call dein#save_state()
 endif
+
+call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+call denite#custom#var('grep', 'command', ['ag'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', [])
+call denite#custom#var('grep', 'default_opts', ['--follow', '--no-group', '--no-color'])
 
 " Required:
 filetype plugin indent on
@@ -75,6 +91,10 @@ imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : 
 " タブキーで補完候補の選択. スニペット内のジャンプもタブキーでジャンプ
 imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
 
+" ## fzf
+nnoremap <C-p> :FZFFileList<CR>
+command! FZFFileList call fzf#run(fzf#wrap({'source': 'find . -type d -name .git -prune -o ! -name .DS_Store', 'down': '40%'}))
+nnoremap f :Ag<CR>
 
 " # KeyBind
 inoremap { {}<LEFT>
@@ -88,8 +108,14 @@ vnoremap ( "zdi(<C-R>z)<ESC>
 vnoremap " "zdi"<C-R>z"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
 
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_start_word_key      = '<C-r>'
+
 " ## Go
 let g:go_bin_path = $GOBIN
+autocmd FileType go setlocal noexpandtab
+autocmd FileType go setlocal tabstop=4
+autocmd FileType go setlocal shiftwidth=4
 
 
 " # Setting
