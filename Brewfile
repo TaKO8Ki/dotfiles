@@ -29,6 +29,7 @@ brew "sshpass"
 brew "tree"
 brew "mecab"
 brew "golangci-lint"
+brew "ag"
 
 # cask
 cask "r"
