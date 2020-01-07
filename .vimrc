@@ -106,6 +106,9 @@ vnoremap [ "zdi[<C-R>z]<ESC>
 vnoremap ( "zdi(<C-R>z)<ESC>
 vnoremap " "zdi"<C-R>z"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
+nnoremap fr gt
+nnoremap fe gT
+nnoremap <C-w> <C-w>w
 
 " ## Go
 let g:go_bin_path = $GOBIN
