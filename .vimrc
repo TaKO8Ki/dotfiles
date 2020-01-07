@@ -19,7 +19,6 @@ if dein#load_state('/Users/tako8ki/.vim/bundle/.cache/dein')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
   call dein#add('scrooloose/nerdtree')
-  call dein#add('terryma/vim-multiple-cursors')
   call dein#add('Shougo/denite.nvim')
   call dein#add('junegunn/fzf', {'build': './install --all'})
   call dein#add('junegunn/fzf.vim')
@@ -107,9 +106,6 @@ vnoremap [ "zdi[<C-R>z]<ESC>
 vnoremap ( "zdi(<C-R>z)<ESC>
 vnoremap " "zdi"<C-R>z"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
-
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_start_word_key      = '<C-r>'
 
 " ## Go
 let g:go_bin_path = $GOBIN
