@@ -42,6 +42,8 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias la='ls -a'
 alias rc='rails c'
+alias cb='cargo build'
+alias cr='cargo run'
 
 ## docker
 alias dcb='docker-compose build'
@@ -146,3 +148,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
