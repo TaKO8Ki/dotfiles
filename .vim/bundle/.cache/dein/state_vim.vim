@@ -6,4 +6,4 @@ let g:dein#_ftplugin = ftplugin
 let g:dein#_base_path = '/Users/tako8ki/.vim/bundle/.cache/dein'
 let g:dein#_runtime_path = '/Users/tako8ki/.vim/bundle/.cache/dein/.cache/.vimrc/.dein'
 let g:dein#_cache_path = '/Users/tako8ki/.vim/bundle/.cache/dein/.cache/.vimrc'
-let &runtimepath = '/Users/tako8ki/.vim,/usr/local/share/vim/vimfiles,/Users/tako8ki/.vim/bundle/.cache/dein/repos/github.com/Shougo/dein.vim,/Users/tako8ki/.vim/bundle/.cache/dein/.cache/.vimrc/.dein,/usr/local/share/vim/vim82,/Users/tako8ki/.vim/bundle/.cache/dein/.cache/.vimrc/.dein/after,/usr/local/share/vim/vimfiles/after,/Users/tako8ki/.vim/after'
+let &runtimepath = '/Users/tako8ki/.vim,/usr/local/share/vim/vimfiles,/Users/tako8ki/.vim/bundle/.cache/dein/repos/github.com/junegunn/fzf,/Users/tako8ki/.vim/bundle/.cache/dein/repos/github.com/Shougo/dein.vim,/Users/tako8ki/.vim/bundle/.cache/dein/.cache/.vimrc/.dein,/usr/local/share/vim/vim82,/Users/tako8ki/.vim/bundle/.cache/dein/.cache/.vimrc/.dein/after,/usr/local/share/vim/vimfiles/after,/Users/tako8ki/.vim/after'

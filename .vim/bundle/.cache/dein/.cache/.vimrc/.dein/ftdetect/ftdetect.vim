@@ -1,5 +1,3 @@
-" Detect syntax file.
-autocmd BufNewFile,BufRead *.snip,*.snippets set filetype=neosnippet
 " vint: -ProhibitAutocmdWithNoGroup
 
 " don't spam the user when Vim is started in Vi compatibility mode
@@ -40,3 +38,7 @@ let &cpo = s:cpo_save
 unlet s:cpo_save
 
 " vim: sw=2 ts=2 et
+" Detect syntax file.
+autocmd BufNewFile,BufRead *.snip,*.snippets set filetype=neosnippet
+" Detect syntax file.
+autocmd BufNewFile,BufRead *.snip,*.snippets set filetype=neosnippet

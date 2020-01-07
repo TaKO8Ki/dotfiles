@@ -1,5 +1,5 @@
-.DS_Store
-/doc/tags
-/.coverage.covimerage
-/coverage.xml
-*.pyc
+__pycache__
+
+# demo
+/plugin/hello.vim
+/pythonx/hello.py

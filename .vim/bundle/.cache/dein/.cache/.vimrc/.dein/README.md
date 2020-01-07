@@ -1,109 +1,85 @@
-# ctrlp.vim
-Full path fuzzy __file__, __buffer__, __mru__, __tag__, __...__ finder for Vim.
+# vim-go [![Build Status](http://img.shields.io/travis/fatih/vim-go.svg?style=flat-square)](https://travis-ci.org/fatih/vim-go)
 
-* Written in pure Vimscript for MacVim, gVim and Vim 7.0+.
-* Full support for Vim's regexp as search patterns.
-* Built-in Most Recently Used (MRU) files monitoring.
-* Built-in project's root finder.
-* Open multiple files at once.
-* Create new files and directories.
-* [Extensible][2].
+<p align="center">
+  <img style="float: right;" src="assets/vim-go.png" alt="Vim-go logo"/>
+</p>
 
-![ctrlp][1]
+## Features
 
-## Basic Usage
-* Run `:CtrlP` or `:CtrlP [starting-directory]` to invoke CtrlP in find file mode.
-* Run `:CtrlPBuffer` or `:CtrlPMRU` to invoke CtrlP in find buffer or find MRU file mode.
-* Run `:CtrlPMixed` to search in Files, Buffers and MRU files at the same time.
+This plugin adds Go language support for Vim, with the following main features:
 
-Check `:help ctrlp-commands` and `:help ctrlp-extensions` for other commands.
+* Compile your package with `:GoBuild`, install it with `:GoInstall` or test it
+  with `:GoTest`. Run a single test with `:GoTestFunc`).
+* Quickly execute your current file(s) with `:GoRun`.
+* Improved syntax highlighting and folding.
+* Debug programs with integrated `delve` support with `:GoDebugStart`.
+* Completion support via `gocode` and `gopls`.
+* `gofmt` or `goimports` on save keeps the cursor position and undo history.
+* Go to symbol/declaration with `:GoDef`.
+* Look up documentation with `:GoDoc` or `:GoDocBrowser`.
+* Easily import packages via `:GoImport`, remove them via `:GoDrop`.
+* Precise type-safe renaming of identifiers with `:GoRename`.
+* See which code is covered by tests with `:GoCoverage`.
+* Add or remove tags on struct fields with `:GoAddTags` and `:GoRemoveTags`.
+* Call `gometalinter` with `:GoMetaLinter` to invoke all possible linters
+  (`golint`, `vet`, `errcheck`, `deadcode`, etc.) and put the result in the
+  quickfix or location list.
+* Lint your code with `:GoLint`, run your code through `:GoVet` to catch static
+  errors, or make sure errors are checked with `:GoErrCheck`.
+* Advanced source analysis tools utilizing `guru`, such as `:GoImplements`,
+  `:GoCallees`, and `:GoReferrers`.
+* ... and many more! Please see [doc/vim-go.txt](doc/vim-go.txt) for more
+  information.
 
-##### Once CtrlP is open:
-* Press `<F5>` to purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.
-* Press `<c-f>` and `<c-b>` to cycle between modes.
-* Press `<c-d>` to switch to filename only search instead of full path.
-* Press `<c-r>` to switch to regexp mode.
-* Use `<c-j>`, `<c-k>` or the arrow keys to navigate the result list.
-* Use `<c-t>` or `<c-v>`, `<c-x>` to open the selected entry in a new tab or in a new split.
-* Use `<c-n>`, `<c-p>` to select the next/previous string in the prompt's history.
-* Use `<c-y>` to create a new file and its parent directories.
-* Use `<c-z>` to mark/unmark multiple files and `<c-o>` to open them.
+## Install
 
-Run `:help ctrlp-mappings` or submit `?` in CtrlP for more mapping help.
+vim-go requires at least Vim 8.0.1453 or Neovim 0.3.1.
 
-* Submit two or more dots `..` to go up the directory tree by one or multiple levels.
-* End the input string with a colon `:` followed by a command to execute it on the opening file(s):
-Use `:25` to jump to line 25.
-Use `:diffthis` when opening multiple files to run `:diffthis` on the first 4 files.
+The [**latest stable release**](https://github.com/fatih/vim-go/releases/latest) is the
+recommended version to use. If you choose to use the master branch instead,
+please do so with caution; it is a _development_ branch.
 
-## Basic Options
-* Change the default mapping and the default command to invoke CtrlP:
 
-    ```vim
-    let g:ctrlp_map = '<c-p>'
-    let g:ctrlp_cmd = 'CtrlP'
-    ```
+vim-go follows the standard runtime path structure. Below are some helper lines
+for popular package managers:
 
-* When invoked without an explicit starting directory, CtrlP will set its local working directory according to this variable:
+* [Vim 8 packages](http://vimhelp.appspot.com/repeat.txt.html#packages)
+  * `git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go`
+* [Pathogen](https://github.com/tpope/vim-pathogen)
+  * `git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go`
+* [vim-plug](https://github.com/junegunn/vim-plug)
+  * `Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }`
+* [Vundle](https://github.com/VundleVim/Vundle.vim)
+  * `Plugin 'fatih/vim-go'`
 
-    ```vim
-    let g:ctrlp_working_path_mode = 'ra'
-    ```
+You will also need to install all the necessary binaries. vim-go makes it easy
+to install all of them by providing a command, `:GoInstallBinaries`, which will
+`go get` all the required binaries.
 
-    `'c'` - the directory of the current file.  
-    `'a'` - the directory of the current file, unless it is a subdirectory of the cwd  
-    `'r'` - the nearest ancestor of the current file that contains one of these directories or files: `.git` `.hg` `.svn` `.bzr` `_darcs`  
-    `'w'` - modifier to "r": start search from the cwd instead of the current file's directory  
-    `0` or `''` (empty string) - disable this feature.
+Check out the Install section in [the documentation](doc/vim-go.txt) for more
+detailed instructions (`:help go-install`).
 
-    If none of the default markers (`.git` `.hg` `.svn` `.bzr` `_darcs`) are present in a project, you can define additional ones with `g:ctrlp_root_markers`:
+## Usage
 
-    ```vim
-    let g:ctrlp_root_markers = ['pom.xml', '.p4ignore']
-    ```
+The full documentation can be found at [doc/vim-go.txt](doc/vim-go.txt). You can
+display it from within Vim with `:help vim-go`.
 
-    If more than one mode is specified, they will be tried in order until a directory is located.
+Depending on your installation method, you may have to generate the plugin's
+[`help tags`](http://vimhelp.appspot.com/helphelp.txt.html#%3Ahelptags)
+manually (e.g. `:helptags ALL`).
 
-* If a file is already open, open it again in a new pane instead of switching to the existing pane
+We also have an [official vim-go tutorial](https://github.com/fatih/vim-go/wiki).
 
-    `let g:ctrlp_switch_buffer = 'et'`
+## FAQ and troubleshooting
 
-* Exclude files and directories using Vim's `wildignore` and CtrlP's own `g:ctrlp_custom_ignore`. If a custom listing command is being used, exclusions are ignored:
-
-    ```vim
-    set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-
-    let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-    let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-      \ 'file': '\v\.(exe|so|dll)$',
-      \ 'link': 'some_bad_symbolic_links',
-      \ }
-    ```
-
-* Use a custom file listing command:
-
-    ```vim
-    let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
-    let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
-    ```
-
-* Ignore files in `.gitignore`
-    
-    ```vim
-      let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-    ```
-
-Check `:help ctrlp-options` for other options.
-
-## Installation
-Use your favorite method or check the homepage for a [quick installation guide][3].
+The FAQ and troubleshooting tips are in the documentation and can be quickly
+accessed using `:help go-troubleshooting`. If you believe you've found a bug or
+shortcoming in vim-go that is neither addressed by help nor in [existing
+issues](https://github.com/fatih/vim-go/issues), please open an issue with
+clear reproduction steps. `:GoReportGitHubIssue` can be used pre-populate a lot
+of the information needed when creating a new issue.
 
 ## License
-CtrlP is distributed under Vim's [license][4].
 
-[1]: http://i.imgur.com/aOcwHwt.png
-[2]: https://github.com/ctrlpvim/ctrlp.vim/tree/extensions
-[3]: http://ctrlpvim.github.com/ctrlp.vim#installation
-[4]: http://vimdoc.sourceforge.net/htmldoc/uganda.html
+The BSD 3-Clause License - see [`LICENSE`](LICENSE) for more details
+
