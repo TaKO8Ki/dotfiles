@@ -30,6 +30,7 @@ brew "tree"
 brew "mecab"
 brew "golangci-lint"
 brew "ag"
+brew "terraform"
 
 # cask
 cask "r"
@@ -43,4 +44,5 @@ cask 'karabiner-elements'
 cask 'github'
 cask 'slack'
 cask 'alfred'
+cask 'postman'
 
