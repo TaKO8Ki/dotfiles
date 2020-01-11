@@ -1,23 +1,27 @@
-#### environment
+<!--
 
-- vim: ????
-- vim-airline: ????
-- OS: ????
-- Have you reproduced with a minimal vimrc: ???
-- What is your airline configuration: ???
-if you are using terminal:
-- terminal: ????
-- $TERM variable: ???
-- color configuration (:set t_Co?):
-if you are using Neovim:
-- does it happen in Vim: ???
+Hi, and thanks for reporting an issue with rust.vim. 
 
-#### actual behavior
+Details about your environment will help us assist you.
 
-????
+Please edit this template!
 
-#### expected behavior
+-->
 
-????
+* rust.vim version: <!-- Describe if you use a Vim plugin manager, and you
+can use it to tell which version of rust.vim you are running. -->
 
-#### screen shot (if possible)
+Steps to reproduce:
+
+<!-- It's best to try to reproduce the issue with the master version of
+rust.vim. The issue may already be fixed! -->
+_?_
+
+Expected vs. actual behavior:
+
+_?_
+
+Paste debugging info from the Rust Vim plugin via _one_ of the following
+commands: `:RustInfo`,  `:RustInfoToClipboard`, or `:RustInfoToFile <filename>`.
+
+_?_

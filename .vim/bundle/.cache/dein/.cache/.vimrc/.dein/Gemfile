@@ -1,4 +1,2 @@
 source 'https://rubygems.org'
-gem 'vimrunner'
-gem 'rake'
-gem 'rspec'
+gem 'vim-flavor', '~> 2.2.2'

@@ -4,20 +4,24 @@
 
 ## Environment Information
  * OS:
- * Neovim/Vim/Gvim version:
+ * Vim version:
 
-## Provide a minimal .vimrc with less than 50 lines
+## Minimal vimrc less than 50 lines
 
-    " Your minimal.vimrc
+  " Your vimrc
+  set nocompatible
 
-## Generate a logfile if appropriate
+  set runtimepath+=~/path/to/neocomplete.vim/
 
- 1. export NVIM_PYTHON_LOG_FILE=/tmp/log
- 2. export NVIM_PYTHON_LOG_LEVEL=DEBUG
- 3. nvim -u minimal.vimrc
- 4. recreate your issue
- 5. cat /tmp/log_{PID}
+  set fo+=aw
+  let g:neocomplete#enable_at_startup = 1
+  let g:neocomplete#enable_auto_select = 0
+  set tw=10 " just for testing purposes
+
+## Reproducable ways from Vim starting
+
+ 1.
+ 2.
+ 3.
 
 ## Screen shot (if possible)
-
-## Upload the log file
