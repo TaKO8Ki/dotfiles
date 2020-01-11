@@ -23,6 +23,7 @@ if dein#load_state('/Users/tako8ki/.vim/bundle/.cache/dein')
   call dein#add('junegunn/fzf', {'build': './install --all'})
   call dein#add('junegunn/fzf.vim')
   call dein#add('mileszs/ack.vim')
+  call dein#add('rust-lang/rust.vim')
   
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
