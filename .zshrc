@@ -33,6 +33,9 @@ eval "$(nodenv init -)"
 # vim
 export PATH="/usr/local/bin:$PATH"
 
+# git
+export PATH="/usr/local/Cellar/git/2.5.0/bin:$PATH"
+
 # alias
 export LSCOLORS=gxfxcxdxbxegedabagacad
 alias ls='ls -G'
@@ -44,6 +47,8 @@ alias la='ls -a'
 alias rc='rails c'
 alias cb='cargo build'
 alias cr='cargo run'
+alias gce='git commit --allow-empty -m "first commit"'
+alias bi='bundle install'
 
 ## docker
 alias dcb='docker-compose build'
