@@ -31,6 +31,8 @@ brew "mecab"
 brew "golangci-lint"
 brew "ag"
 brew "terraform"
+brew "git"
+brew "gtk+3"
 
 # cask
 cask "r"
