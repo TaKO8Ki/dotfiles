@@ -47,4 +47,5 @@ cask 'github'
 cask 'slack'
 cask 'alfred'
 cask 'postman'
+cask 'figma'
 
