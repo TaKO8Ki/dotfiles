@@ -3848,7 +3848,7 @@ Make Text Bigger</string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 381 620 392 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>473 115 874 641 0 0 1440 877 </string>
+	<string>113 61 1298 811 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -4553,7 +4553,7 @@ Make Text Bigger</string>
 			<key>Rows</key>
 			<integer>40</integer>
 			<key>Screen</key>
-			<integer>-2</integer>
+			<integer>0</integer>
 			<key>Scrollback Lines</key>
 			<integer>0</integer>
 			<key>Selected Text Color</key>
@@ -4620,26 +4620,11 @@ Make Text Bigger</string>
 								<real>+infinity</real>
 								<key>minwidth</key>
 								<integer>0</integer>
-								<key>shared text color</key>
-								<dict>
-									<key>Alpha Component</key>
-									<real>1</real>
-									<key>Blue Component</key>
-									<real>1</real>
-									<key>Color Space</key>
-									<string>sRGB</string>
-									<key>Green Component</key>
-									<real>1</real>
-									<key>Red Component</key>
-									<real>1</real>
-								</dict>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
 							<dict>
 								<key>algorithm</key>
 								<integer>0</integer>
-								<key>font</key>
-								<string>.AppleSystemUIFont 12</string>
 							</dict>
 						</dict>
 					</dict>
@@ -4657,29 +4642,14 @@ Make Text Bigger</string>
 								<key>maxwidth</key>
 								<real>+infinity</real>
 								<key>minwidth</key>
-								<real>0.0</real>
+								<integer>0</integer>
 								<key>path</key>
 								<string>path</string>
-								<key>shared text color</key>
-								<dict>
-									<key>Alpha Component</key>
-									<real>1</real>
-									<key>Blue Component</key>
-									<real>1</real>
-									<key>Color Space</key>
-									<string>sRGB</string>
-									<key>Green Component</key>
-									<real>1</real>
-									<key>Red Component</key>
-									<real>1</real>
-								</dict>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
 							<dict>
 								<key>algorithm</key>
 								<integer>0</integer>
-								<key>font</key>
-								<string>.AppleSystemUIFont 12</string>
 							</dict>
 						</dict>
 					</dict>
@@ -4690,28 +4660,15 @@ Make Text Bigger</string>
 						<dict>
 							<key>knobs</key>
 							<dict>
+								<key>base: compression resistance</key>
+								<integer>1</integer>
 								<key>base: priority</key>
 								<real>5</real>
-								<key>shared text color</key>
-								<dict>
-									<key>Alpha Component</key>
-									<real>1</real>
-									<key>Blue Component</key>
-									<real>1</real>
-									<key>Color Space</key>
-									<string>sRGB</string>
-									<key>Green Component</key>
-									<real>1</real>
-									<key>Red Component</key>
-									<real>1</real>
-								</dict>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
 							<dict>
 								<key>algorithm</key>
 								<integer>0</integer>
-								<key>font</key>
-								<string>.AppleSystemUIFont 12</string>
 							</dict>
 						</dict>
 					</dict>
@@ -4776,12 +4733,12 @@ Make Text Bigger</string>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{38, 829}</string>
+		<string>{181, 683}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>7B658424-D138-4F30-A226-9FCDB45E5D7D</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>51</integer>
+	<integer>55</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -5500,6 +5457,8 @@ Make Text Bigger</string>
 	</dict>
 	<key>NoSyncSearchHistory2</key>
 	<array>
+		<string>error</string>
+		<string>192.168.0.1</string>
 		<string>kubeadm join</string>
 		<string>kubne</string>
 		<string>kubec</string>
@@ -5507,8 +5466,6 @@ Make Text Bigger</string>
 		<string>maser</string>
 		<string>kubelet</string>
 		<string>timeout</string>
-		<string>error</string>
-		<string>ferror</string>
 	</array>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>591384688.23727906</real>
@@ -5566,7 +5523,7 @@ Make Text Bigger</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-01-09T21:53:54Z</date>
+	<date>2020-01-29T15:24:38Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -5576,7 +5533,7 @@ Make Text Bigger</string>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>SmartPlacement</key>
-	<false/>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>StatusBarPosition</key>
