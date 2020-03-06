@@ -24,6 +24,7 @@ if dein#load_state('/Users/tako8ki/.vim/bundle/.cache/dein')
   call dein#add('junegunn/fzf.vim')
   call dein#add('mileszs/ack.vim')
   call dein#add('rust-lang/rust.vim')
+  call dein#add('nathanaelkane/vim-indent-guides')
   
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
@@ -96,6 +97,10 @@ nnoremap <C-p> :FZFFileList<CR>
 command! FZFFileList call fzf#run(fzf#wrap({'source': 'find . -type d -name .git -prune -o ! -name .DS_Store', 'down': '40%'}))
 nnoremap f :Ag<CR>
 
+" ## indent guide
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+
 " # KeyBind
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
@@ -109,7 +114,9 @@ vnoremap " "zdi"<C-R>z"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
 nnoremap fr gt
 nnoremap fe gT
-nnoremap <C-w> <C-w>w
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
 " ## Go
 let g:go_bin_path = $GOBIN
@@ -126,7 +133,6 @@ set autoread
 set hidden
 set showcmd
 set number
-set cursorline
 set virtualedit=onemore
 set smartindent
 set visualbell
@@ -141,6 +147,7 @@ set smartcase
 set incsearch
 set wrapscan
 set hlsearch
+set tabstop=2 shiftwidth=2 expandtab
 set list listchars=tab:\▸\-
 set term=xterm-256color
 syntax on
