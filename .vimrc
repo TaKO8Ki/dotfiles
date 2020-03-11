@@ -26,6 +26,7 @@ if dein#load_state('/Users/tako8ki/.cache/dein')
   call dein#add('rust-lang/rust.vim')
   call dein#add('nathanaelkane/vim-indent-guides')
   call dein#add('Shougo/deoplete.nvim')
+  call dein#add('kassio/neoterm')
   
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
@@ -77,8 +78,15 @@ nnoremap f :Ag<CR>
 " ## indent guide
 let g:indent_guides_enable_on_vim_startup = 2
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'fzf']
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=#262626 ctermbg=gray
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=#262626 ctermbg=darkgray
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=gray
+
+" ## neoterm
+let g:neoterm_autoscroll=1
+let g:neoterm_default_mod='belowright'
+let g:neoterm_size=10
+nnoremap <C-s> :Tnew<CR>
+tnoremap <silent> <C-w> <C-\><C-n><C-w>
 
 " # KeyBind
 inoremap { {}<LEFT>
@@ -128,6 +136,7 @@ set smartcase
 set incsearch
 set wrapscan
 set hlsearch
+set inccommand=split
 set tabstop=2 shiftwidth=2 expandtab
 set list listchars=tab:\▸\-
 syntax on
