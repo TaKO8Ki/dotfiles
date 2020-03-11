@@ -26,6 +26,8 @@ for f in .??*; do
 done
 
 ln -sf ~/dotfiles/karabiner.json ~/.config/karabiner/karabiner.json
+ln -sf ~/.vim ~/.config/nvim
+ln -sf ~/.vimrc ~/.config/nvim/init.vim
 
 [ -e ~/.gitconfig.local ] || cp ~/dotfiles/.gitconfig.local.template ~/.gitconfig.local
 
