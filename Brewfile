@@ -33,6 +33,7 @@ brew "ag"
 brew "terraform"
 brew "git"
 brew "gtk+3"
+brew "tig"
 
 # cask
 cask "r"
