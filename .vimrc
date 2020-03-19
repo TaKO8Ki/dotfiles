@@ -139,7 +139,6 @@ set hlsearch
 set clipboard+=unnamed
 set inccommand=split
 set tabstop=2 shiftwidth=2 expandtab
-set list listchars=tab:\▸\-
 syntax on
 colorscheme antares
 
