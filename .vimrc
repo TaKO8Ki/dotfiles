@@ -74,10 +74,11 @@ autocmd FileType go :match goErr /\<err\>/
 nnoremap <C-p> :FZFFileList<CR>
 command! FZFFileList call fzf#run(fzf#wrap({'source': 'find . -type d -name .git -prune -o ! -name .DS_Store', 'down': '40%'}))
 nnoremap f :Ag<CR>
+nnoremap <C-r> :Buffers<CR>
 
 " ## indent guide
 let g:indent_guides_enable_on_vim_startup = 2
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'fzf']
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'fzf', 'neoterm']
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=#262626 ctermbg=darkgray
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=gray
 
@@ -104,6 +105,10 @@ nnoremap fe gT
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
+noremap <Right> <C-w>>
+noremap <Left> <C-w><
+noremap <Up> <C-w>-
+noremap <Down> <C-w>+
 
 " ## Go
 let g:go_bin_path = $GOBIN
