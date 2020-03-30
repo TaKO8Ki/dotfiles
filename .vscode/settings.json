@@ -1,6 +1,10 @@
 {
+    // editor
     "workbench.colorTheme": "Atom One Dark",
+    // terminal
+    "terminal.integrated.fontFamily": "'Fira Mono For Powerline",
     "files.insertFinalNewline": true,
+    // languages
     "[ruby]": {
         "editor.tabSize": 2
     },
