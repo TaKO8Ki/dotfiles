@@ -1,0 +1,37 @@
+{
+    "workbench.colorTheme": "Atom One Dark",
+    "files.insertFinalNewline": true,
+    "[ruby]": {
+        "editor.tabSize": 2
+    },
+    "ruby.lint": {
+        "reek": true,
+        "rubocop": true,
+        "ruby": true,
+        "fasterer": true,
+        "debride": true,
+        "ruby-lint": true
+    },
+    "ruby.intellisense": "rubyLocate",
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.format": "rubocop",
+    "ruby.useLanguageServer": true,
+    "ruby.locate": {
+        "exclude": "{**/@(test|spec|tmp|.*),**/@(test|spec|tmp|.*)/**,**/*_spec.rb}",
+        "include": "**/*.rb"
+    },
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "editor.tabSize": 4
+    },
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "[rust]": {
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4
+    }
+}
