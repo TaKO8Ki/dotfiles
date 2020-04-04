@@ -33,6 +33,9 @@ eval "$(nodenv init -)"
 # vim
 export PATH="/usr/local/bin:$PATH"
 
+# nim
+export PATH=/Users/tako8ki/.nimble/bin:$PATH
+
 # git
 export PATH="/usr/local/Cellar/git/2.5.0/bin:$PATH"
 
