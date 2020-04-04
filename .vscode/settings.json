@@ -37,5 +37,8 @@
     "[rust]": {
         "editor.formatOnSave": true,
         "editor.tabSize": 4
+    },
+    "[python]": {
+        "editor.tabSize": 2
     }
 }
