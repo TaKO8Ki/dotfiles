@@ -40,5 +40,9 @@
     },
     "[python]": {
         "editor.tabSize": 2
-    }
+    },
+    "[nim]": {
+        "editor.tabSize": 2
+    },
+    "workbench.startupEditor": "newUntitledFile"
 }
