@@ -49,10 +49,19 @@ endif
 filetype plugin indent on
 
 " ## vim-airline
-let g:airline_theme='minimalist'
+" https://github.com/vim-airline/vim-airline/wiki/Screenshots
+let g:airline_theme='luna'
+let g:airline_powerline_fonts = 1
 
 " ## nerdtree
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
+function MyNerdToggle()
+    if &filetype == 'nerdtree'
+        :NERDTreeToggle
+    else
+        :NERDTreeFind
+    endif
+  endfunction
+nnoremap <silent><C-e> :call MyNerdToggle()<CR>
 
 " ## vim-go
 let g:go_fmt_command = "goimports"
@@ -78,6 +87,7 @@ nnoremap <C-r> :Buffers<CR>
 
 " ## indent guide
 let g:indent_guides_enable_on_vim_startup = 2
+let g:indent_guides_guide_size = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'fzf', 'neoterm']
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=#262626 ctermbg=darkgray
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=gray
@@ -109,6 +119,7 @@ noremap <Right> <C-w>>
 noremap <Left> <C-w><
 noremap <Up> <C-w>-
 noremap <Down> <C-w>+
+noremap <Tab> <C-u>
 
 " ## Go
 let g:go_bin_path = $GOBIN
@@ -152,4 +163,3 @@ highlight NonText ctermbg=none
 highlight LineNr ctermbg=none
 highlight Folded ctermbg=none
 highlight EndOfBuffer ctermbg=none
-
