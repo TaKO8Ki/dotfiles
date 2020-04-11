@@ -30,6 +30,13 @@ eval "$(pyenv init -)"
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 
+# jenv
+export JENV_ROOT="$HOME/.jenv"
+if [ -d "${JENV_ROOT}" ]; then
+  export PATH="$JENV_ROOT/bin:$PATH"
+  eval "$(jenv init -)"
+fi
+
 # vim
 export PATH="/usr/local/bin:$PATH"
 
