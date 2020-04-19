@@ -135,6 +135,8 @@ let g:rustfmt_autosave = 1
 let g:LanguageClient_serverCommands = {
         \ 'cpp': ['clangd'],
         \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+        \ 'ruby': ['solargraph', 'stdio'],
+        \ 'go': ['gopls'],
         \ }
 
 ""augroup LanguageClient_config
@@ -151,6 +153,9 @@ nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<CR>
 
 " ## deoplete
 let g:deoplete#enable_at_startup = 1
+call deoplete#custom#var('omni', 'input_patterns', {
+    \ 'ruby': ['[^. *\t]\.\w*', '[a-zA-Z_]\w*::'],
+\})
 
 " # Setting
 set fenc=utf-8
