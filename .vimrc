@@ -122,6 +122,7 @@ noremap <Left> <C-w><
 noremap <Up> <C-w>-
 noremap <Down> <C-w>+
 noremap <Tab> <C-u>
+noremap <C-t> <C-o>
 
 " ## Go
 let g:go_bin_path = $GOBIN
@@ -144,7 +145,7 @@ let g:LanguageClient_serverCommands = {
 
 let g:LanguageClient_autoStart = 1
 nnoremap <silent> gh :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>:normal! m`<CR>
 nnoremap <silent> gr :call LanguageClient_textDocument_rename()<CR>
 nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<CR>
 
