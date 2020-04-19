@@ -24,6 +24,8 @@ if dein#load_state('/Users/tako8ki/.cache/dein')
   call dein#add('junegunn/fzf.vim')
   call dein#add('mileszs/ack.vim')
   call dein#add('rust-lang/rust.vim')
+  call dein#add('racer-rust/vim-racer')
+  call dein#add('autozimu/LanguageClient-neovim')
   call dein#add('nathanaelkane/vim-indent-guides')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('kassio/neoterm')
@@ -126,6 +128,25 @@ let g:go_bin_path = $GOBIN
 autocmd FileType go setlocal noexpandtab
 autocmd FileType go setlocal tabstop=4
 autocmd FileType go setlocal shiftwidth=4
+
+" ## Rust
+let g:rustfmt_autosave = 1
+let g:LanguageClient_serverCommands = {
+        \ 'cpp': ['clangd'],
+        \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+        \ }
+
+""augroup LanguageClient_config
+""autocmd!
+""autocmd User LanguageClientStarted setlocal signcolumn=yes
+""autocmd User LanguageClientStopped setlocal signcolumn=auto
+""augroup END
+
+let g:LanguageClient_autoStart = 1
+nnoremap <silent> gh :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> gr :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<CR>
 
 " ## deoplete
 let g:deoplete#enable_at_startup = 1
