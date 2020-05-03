@@ -37,6 +37,10 @@ if [ -d "${JENV_ROOT}" ]; then
   eval "$(jenv init -)"
 fi
 
+# rust
+export LD_LIBRARY_PATH=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib
+export RLS_ROOT=$HOME/rls
+
 # vim
 export PATH="/usr/local/bin:$PATH"
 
@@ -59,6 +63,7 @@ alias cb='cargo build'
 alias cr='cargo run'
 alias gce='git commit --allow-empty -m "first commit"'
 alias bi='bundle install'
+alias ccp='cargo clippy'
 
 ## docker
 alias dcb='docker-compose build'
