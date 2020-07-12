@@ -1,0 +1,49 @@
+{
+    // editor
+    "workbench.colorTheme": "Atom One Dark",
+    // terminal
+    "terminal.integrated.fontFamily": "'Fira Mono For Powerline",
+    "files.insertFinalNewline": true,
+    // languages
+    "[ruby]": {
+        "editor.tabSize": 2
+    },
+    "ruby.lint": {
+        "reek": true,
+        "rubocop": true,
+        "ruby": true,
+        "fasterer": true,
+        "debride": true,
+        "ruby-lint": true
+    },
+    "ruby.intellisense": "rubyLocate",
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.format": "rubocop",
+    "ruby.useLanguageServer": true,
+    "ruby.locate": {
+        "exclude": "{**/@(test|spec|tmp|.*),**/@(test|spec|tmp|.*)/**,**/*_spec.rb}",
+        "include": "**/*.rb"
+    },
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "editor.tabSize": 4
+    },
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "[rust]": {
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4
+    },
+    "[python]": {
+        "editor.tabSize": 2
+    },
+    "[nim]": {
+        "editor.tabSize": 2
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "window.zoomLevel": 1
+}

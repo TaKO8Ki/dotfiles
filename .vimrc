@@ -24,9 +24,14 @@ if dein#load_state('/Users/tako8ki/.cache/dein')
   call dein#add('junegunn/fzf.vim')
   call dein#add('mileszs/ack.vim')
   call dein#add('rust-lang/rust.vim')
+  call dein#add('racer-rust/vim-racer')
+  call dein#add('autozimu/LanguageClient-neovim')
   call dein#add('nathanaelkane/vim-indent-guides')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('kassio/neoterm')
+  call dein#add('yuezk/vim-js')
+  call dein#add('maxmellon/vim-jsx-pretty')
+  call dein#add('HerringtonDarkholme/yats.vim')
   
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
@@ -49,10 +54,19 @@ endif
 filetype plugin indent on
 
 " ## vim-airline
-let g:airline_theme='minimalist'
+" https://github.com/vim-airline/vim-airline/wiki/Screenshots
+let g:airline_theme='luna'
+let g:airline_powerline_fonts = 1
 
 " ## nerdtree
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
+function MyNerdToggle()
+    if &filetype == 'nerdtree'
+        :NERDTreeToggle
+    else
+        :NERDTreeFind
+    endif
+  endfunction
+nnoremap <silent><C-e> :call MyNerdToggle()<CR>
 
 " ## vim-go
 let g:go_fmt_command = "goimports"
@@ -74,10 +88,12 @@ autocmd FileType go :match goErr /\<err\>/
 nnoremap <C-p> :FZFFileList<CR>
 command! FZFFileList call fzf#run(fzf#wrap({'source': 'find . -type d -name .git -prune -o ! -name .DS_Store', 'down': '40%'}))
 nnoremap f :Ag<CR>
+nnoremap <C-r> :Buffers<CR>
 
 " ## indent guide
 let g:indent_guides_enable_on_vim_startup = 2
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'fzf']
+let g:indent_guides_guide_size = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'fzf', 'neoterm']
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=#262626 ctermbg=darkgray
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=gray
 
@@ -104,6 +120,12 @@ nnoremap fe gT
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
+noremap <Right> <C-w>>
+noremap <Left> <C-w><
+noremap <Up> <C-w>-
+noremap <Down> <C-w>+
+noremap <Tab> <C-u>
+noremap <C-t> <C-o>
 
 " ## Go
 let g:go_bin_path = $GOBIN
@@ -111,8 +133,32 @@ autocmd FileType go setlocal noexpandtab
 autocmd FileType go setlocal tabstop=4
 autocmd FileType go setlocal shiftwidth=4
 
+" ## Rust
+let g:rustfmt_autosave = 1
+let g:LanguageClient_serverCommands = {
+        \ 'cpp': ['clangd'],
+        \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+        \ 'ruby': ['solargraph', 'stdio'],
+        \ 'go': ['gopls'],
+        \ }
+
+""augroup LanguageClient_config
+""autocmd!
+""autocmd User LanguageClientStarted setlocal signcolumn=yes
+""autocmd User LanguageClientStopped setlocal signcolumn=auto
+""augroup END
+
+let g:LanguageClient_autoStart = 1
+nnoremap <silent> gh :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>:normal! m`<CR>
+nnoremap <silent> gr :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<CR>
+
 " ## deoplete
 let g:deoplete#enable_at_startup = 1
+call deoplete#custom#var('omni', 'input_patterns', {
+    \ 'ruby': ['[^. *\t]\.\w*', '[a-zA-Z_]\w*::'],
+\})
 
 " # Setting
 set fenc=utf-8
@@ -139,7 +185,6 @@ set hlsearch
 set clipboard+=unnamed
 set inccommand=split
 set tabstop=2 shiftwidth=2 expandtab
-set list listchars=tab:\▸\-
 syntax on
 colorscheme antares
 
@@ -148,4 +193,3 @@ highlight NonText ctermbg=none
 highlight LineNr ctermbg=none
 highlight Folded ctermbg=none
 highlight EndOfBuffer ctermbg=none
-

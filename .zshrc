@@ -30,8 +30,22 @@ eval "$(pyenv init -)"
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 
+# jenv
+export JENV_ROOT="$HOME/.jenv"
+if [ -d "${JENV_ROOT}" ]; then
+  export PATH="$JENV_ROOT/bin:$PATH"
+  eval "$(jenv init -)"
+fi
+
+# rust
+export LD_LIBRARY_PATH=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib
+export RLS_ROOT=$HOME/rls
+
 # vim
 export PATH="/usr/local/bin:$PATH"
+
+# nim
+export PATH=/Users/tako8ki/.nimble/bin:$PATH
 
 # git
 export PATH="/usr/local/Cellar/git/2.5.0/bin:$PATH"
@@ -49,6 +63,7 @@ alias cb='cargo build'
 alias cr='cargo run'
 alias gce='git commit --allow-empty -m "first commit"'
 alias bi='bundle install'
+alias ccp='cargo clippy'
 
 ## docker
 alias dcb='docker-compose build'
