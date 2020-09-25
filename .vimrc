@@ -25,13 +25,18 @@ if dein#load_state('/Users/tako8ki/.cache/dein')
   call dein#add('mileszs/ack.vim')
   call dein#add('rust-lang/rust.vim')
   call dein#add('racer-rust/vim-racer')
-  call dein#add('autozimu/LanguageClient-neovim')
+  call dein#add('autozimu/LanguageClient-neovim', {
+    \ 'rev': 'next',
+    \ 'build': 'bash install.sh',
+    \ })
   call dein#add('nathanaelkane/vim-indent-guides')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('kassio/neoterm')
   call dein#add('yuezk/vim-js')
   call dein#add('maxmellon/vim-jsx-pretty')
   call dein#add('HerringtonDarkholme/yats.vim')
+  call dein#add('ayu-theme/ayu-vim')
+  call dein#add('joshdick/onedark.vim')
   
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
@@ -55,7 +60,7 @@ filetype plugin indent on
 
 " ## vim-airline
 " https://github.com/vim-airline/vim-airline/wiki/Screenshots
-let g:airline_theme='luna'
+let g:airline_theme='minimalist'
 let g:airline_powerline_fonts = 1
 
 " ## nerdtree
@@ -160,6 +165,10 @@ call deoplete#custom#var('omni', 'input_patterns', {
     \ 'ruby': ['[^. *\t]\.\w*', '[a-zA-Z_]\w*::'],
 \})
 
+" ## neovim
+let g:python_host_prog = $HOME.'/.pyenv/shims/python'
+let g:python3_host_prog = $HOME.'/.pyenv/shims/python'
+
 " # Setting
 set fenc=utf-8
 set nobackup
@@ -185,11 +194,13 @@ set hlsearch
 set clipboard+=unnamed
 set inccommand=split
 set tabstop=2 shiftwidth=2 expandtab
+set termguicolors
 syntax on
-colorscheme antares
+colorscheme onedark
+set numberwidth=7
+highlight VertSplit cterm=NONE
 
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
-highlight LineNr ctermbg=none
-highlight Folded ctermbg=none
-highlight EndOfBuffer ctermbg=none
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
+highlight SpecialKey ctermbg=NONE guibg=NONE
+highlight EndOfBuffer ctermbg=NONE guibg=NONE
