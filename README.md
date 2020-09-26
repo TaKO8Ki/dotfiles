@@ -1,7 +1,7 @@
 # TaKO8Ki's dotfiles
 ## Appearance
 
-[![Image from Gyazo](./resources/readme.png)
+![img](./resources/readme.png)
 
 ## Usage
 
