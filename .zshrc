@@ -50,6 +50,10 @@ export PATH=/Users/tako8ki/.nimble/bin:$PATH
 # git
 export PATH="/usr/local/Cellar/git/2.5.0/bin:$PATH"
 
+# gcloud
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
 # alias
 export LSCOLORS=gxfxcxdxbxegedabagacad
 alias ls='ls -G'
@@ -64,6 +68,7 @@ alias cr='cargo run'
 alias gce='git commit --allow-empty -m "first commit"'
 alias bi='bundle install'
 alias ccp='cargo clippy'
+alias v='code'
 
 ## docker
 alias dcb='docker-compose build'
@@ -71,6 +76,9 @@ alias dcb='docker-compose build'
 ## git
 alias h='hub browse'
 alias gd='git diff'
+alias gs='git switch'
+
+setopt hist_ignore_space
 
 # function
 
