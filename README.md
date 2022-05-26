@@ -17,4 +17,6 @@ $ chsh -s /bin/zsh
 $ echo $SHELL
 ```
 
-あとはここ見ろ。https://qiita.com/NaokiIshimura/items/249bb1a101b626a59387
+## Links
+
+- https://qiita.com/NaokiIshimura/items/249bb1a101b626a59387
