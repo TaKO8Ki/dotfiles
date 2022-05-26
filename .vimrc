@@ -131,6 +131,9 @@ noremap <Up> <C-w>-
 noremap <Down> <C-w>+
 noremap <Tab> <C-u>
 noremap <C-t> <C-o>
+nnoremap d "_d
+xnoremap d "_d
+xnoremap p "_dP
 
 " ## Go
 let g:go_bin_path = $GOBIN

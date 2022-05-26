@@ -1,12 +1,49 @@
+autoload -Uz compinit
+compinit -u
+if [ -e /usr/local/share/zsh-completions ]; then
+  fpath=(/usr/local/share/zsh-completions $fpath)
+fi
+
+realpath() {
+    [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
+}
+
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$PATH:/usr/local/bin"
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 plugins=(zsh-syntax-highlighting)
 
+function cd() {
+  flag='-f'
+  if [ $# -eq 0 ]; then
+    builtin cd
+  elif [ $# -eq 1 ]; then
+    if [ $1 = "$flag" ]; then
+      dirs=$(fd --type d . $HOME | fzf)
+      if [ "$dirs" != '' ]; then
+        builtin cd "$dirs"
+      fi
+    else
+      builtin cd $1
+    fi
+  elif [ $2 = "$flag" ]; then
+    target=${1:-$HOME}
+    dirs=$(fd --type d . $target | fzf)
+    if [ "$dirs" != '' ]; then
+      builtin cd "$dirs"
+    fi
+  fi
+}
+
+function mov2gif() {
+  ffmpeg -i $1 -filter_complex "[0:v] setpts=PTS/1.3,fps=24,scale=1000:-1,split [a][b];[a] palettegen [p];[b][p] paletteuse" $2
+    [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
+}
+
+eval "$(frum init)"
+
 # rbenv
-export PATH="$HOME/.rbenv/shims:$PATH"
-eval "$(rbenv init -)"
+# export PATH="$HOME/.rbenv/shims:$PATH"
+# eval "$(rbenv init -)"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -14,7 +51,7 @@ export PATH="$HOME/go/bin:$PATH"
 
 # goenv
 export PATH="$HOME/.goenv/bin:$PATH"
-export GOPATH=$HOME/Programming/Go/go
+export GOPATH=$HOME/go
 export PATH="$HOME/.goenv/shims:$PATH"
 export PATH="$PATH:$GOPATH/bin"
 export GOBIN="$GOPATH/bin"
@@ -41,18 +78,11 @@ fi
 export LD_LIBRARY_PATH=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib
 export RLS_ROOT=$HOME/rls
 
-# vim
-export PATH="/usr/local/bin:$PATH"
-
 # nim
 export PATH=/Users/tako8ki/.nimble/bin:$PATH
 
 # git
 export PATH="/usr/local/Cellar/git/2.5.0/bin:$PATH"
-
-# gcloud
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
 # alias
 export LSCOLORS=gxfxcxdxbxegedabagacad
@@ -69,6 +99,7 @@ alias gce='git commit --allow-empty -m "first commit"'
 alias bi='bundle install'
 alias ccp='cargo clippy'
 alias v='code'
+alias xb='./x.py build'
 
 ## docker
 alias dcb='docker-compose build'
@@ -86,7 +117,7 @@ setopt hist_ignore_space
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="cobalt2"
+ZSH_THEME="oxide"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
