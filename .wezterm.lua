@@ -33,7 +33,10 @@ config.color_schemes = {
 }
 
 config.color_scheme = 'My Ayu Mirage'
-config.min_scroll_bar_height = "1px"
+config.min_scroll_bar_height = "15px"
+config.window_padding = {
+  right = 5
+}
 
 config.window_background_opacity = 0.8
 
